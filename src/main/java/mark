@@ -1,0 +1,15 @@
+README.md
+# TestPattern-prototype
+ee
+
+java 下的
+ex1  利用了克隆的想法重新设置了两个属性不同的类，可以进行 由A 克隆B
+ex2  自己想的一个业务，利用了浅克隆的两种实现方式（实现接口Cloneable 和 自定义克隆方法）
+     组合成了一个复杂类 通过序列化的方式 实现了深克隆
+
+遇到问题：在进行序列化是 遇到了2个问题  异常：invalid type code: AC  与  eofexception
+invalid type code: AC --1/2 && eofexception--3
+异常结论：1.同一个Socket对象流中  只能有一个OutputStream 即：只能实例化一次
+         2.写入数据流由头与体进行组成 多次通过ObjectOutputStream写入时，会在流的末尾处先写入head 再写入内容，故产生第一个异常错误
+         3.当输入的过程中，异常到达流的末尾则会产生eofexception 一场 产生原因：使用了io流的reset()方法
+
