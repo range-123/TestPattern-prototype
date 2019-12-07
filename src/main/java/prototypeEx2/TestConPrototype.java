@@ -18,7 +18,7 @@ public class TestConPrototype {
 
         //1
         User user =new User();
-        user.setAddr("北京");
+        user.setAddr("北京3");
         user.setDeptId("12");
         user.setPhoneNum("1231,1232");
         user.setUserName("张笑天");
